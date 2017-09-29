@@ -4,8 +4,22 @@ md-card.card.mat-card {
   margin-left: 0;
   width: 100% !important;
 }
+
 md-card {
-    max-width: 100% !important;
+  max-width: 100% !important;
+
+}
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: none  !important; 
+}
+
+// main container sizes
+.padding {
+  padding: 30px 0px;
+}
+
+.margin-sides-zero {
+  margin: 0;
 }
 
 .mat-card {
