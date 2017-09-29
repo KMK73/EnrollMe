@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.css";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$GRAY:   #1F2536;
+$fontFamily: "Open Sans"; 
+$backgroundDash: #F1F6FA; 
+
+body {
+    font-family: $fontFamily;
+}
+h3 {
+    font-size: 20px;	
+    line-height: 27px;
+}
+app-home {	
+   font-family: $fontFamily;	
+   color: #1F2536; 
+}
+
+//vertical align center 
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}

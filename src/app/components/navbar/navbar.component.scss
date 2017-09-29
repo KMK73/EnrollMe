@@ -1,0 +1,43 @@
+.navbar {
+  .logo {
+    height: 12px; // width: 106px;
+  }
+  #students {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19px;
+  }
+  .margin-right {
+    margin-right: 15px; 
+  }
+  .no-padding-right {
+      padding-right: 0; 
+  }
+  .no-padding-left {
+      padding-left: 0; 
+  }
+  span {
+    display: inline-block;
+    min-width: 20px;
+    min-height: 20px; 
+    padding: 2px 4px;
+    color: #fff;
+    vertical-align: baseline;
+    white-space: nowrap;
+    text-align: center;
+    border-radius: 13px;
+    text-shadow: none;
+    line-height: 11px;
+    background-color: #e85656;
+    font-size: 11px;
+}
+  background-color: #1F2536;
+  .navbar-nav>li>a {
+    color: #FFF;
+  }
+  a.navbar-brand,
+  a.navbar-nav {
+    color: white;
+  }
+}
