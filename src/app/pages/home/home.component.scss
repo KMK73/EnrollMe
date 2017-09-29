@@ -1,10 +1,27 @@
 $backgroundDash: #F1F6FA;
+$break-small: 320px;
 .top-bar {
   border: 1px solid #CDDBE5;
   background-color: #FFFFFF;
   box-shadow: 0 2px 0 0 rgba(221, 221, 221, 0.5);
   .row {
     min-height: 90px;
+  }
+  h3 {
+	  margin-bottom: 0; 
+  }
+  span {
+    opacity: 0.4;
+    color: #1F2536;
+    font-family: "Open Sans";
+    font-size: 14px;
+	font-weight: 600;
+	padding-left: 18px; 
+  }
+  .border-right {
+    border-right: 1px solid #E1E9F0;
+    padding-right: 15px;
+    padding-left: 15px;
   }
   .pull-right {
     float: right !important; // Use of important emulates bootstrap
@@ -13,6 +30,12 @@ $backgroundDash: #F1F6FA;
     height: 40px;
     width: 1px;
     background-color: #E1E9F0;
+  }
+  .student-btn {
+	@media screen and (max-width: $break-small) {
+		width: 100%;
+		float: none !important;
+	  }
   }
   .blur-btn {
     border-radius: 3px;
@@ -25,7 +48,7 @@ $backgroundDash: #F1F6FA;
     line-height: 13px;
     text-align: center;
     min-width: 135px;
-    padding: 12px;
+	padding: 12px;
   }
 }
 
