@@ -2,26 +2,40 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.css";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+// @import '~https://fonts.googleapis.com/icon?family=Material+Icons'; // import for using material icons
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+// import for using the default material theme indigo-pink
 
-$GRAY:   #1F2536;
-$fontFamily: "Open Sans"; 
-$backgroundDash: #F1F6FA; 
-
+$GRAY : #1F2536;
+$fontFamily: "Open Sans";
+$backgroundDash: #F1F6FA;
 body {
-    font-family: $fontFamily;
+  font-family: $fontFamily;
 }
+
 h3 {
-    font-size: 20px;	
-    line-height: 27px;
+  font-size: 20px;
+  line-height: 27px;
 }
-app-home {	
-   font-family: $fontFamily;	
-   color: #1F2536; 
+
+app-home {
+  font-family: $fontFamily;
+  color: #1F2536;
 }
 
 //vertical align center 
 .vcenter {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+
+md-card {
+  max-width: 94%;
+  margin: 2em auto;
+  text-align: center;
+}
+
+md-toolbar-row {
+  justify-content: space-between;
 }

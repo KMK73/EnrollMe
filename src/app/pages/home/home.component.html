@@ -1,32 +1,43 @@
 <div class="container-fluid top-bar">
 
   <div class="row">
-    <div class="col-sm-12 col-md-8">
+    <div class="col-xs-12 col-md-8">
       <div class="row">
         <div class="align-self-center border-right">
           <h3>Student Enrollment</h3>
         </div>
-        <!-- <div class="col hr align-self-center"></div> -->
         <div class="align-self-center">
-          <span>GRADE 4</span>
+          <form>
+              <md-select placeholder="GRADE 4" name="grade">
+                <md-option *ngFor="let grade of grades" [value]="grade.value">
+                  {{grade.viewValue}}
+                </md-option>
+              </md-select>
+            </form>
         </div>
       </div>
     </div>
-    <div class="col-sm-12 col-md-4 align-self-center student-btn">
-      <button type="button" class="btn pull-right blur-btn">Add Student</button>
+    <div class="col-xs-12 col-md-4 align-self-center student-btn">
+      <button type="button" class="btn pull-right blur-btn" (click)="showConfirm()">Add Student</button>
     </div>
   </div>
 </div>
 <div class="container-fluid main-dash">
   <div class="row padding">
-    <div class="col-sm-12 col-md-3">
-      <select class="sort" ng-model="sortBy" ng-options="x for x in names">
-          </select>
+    <div class="col-xs-12 col-sm-6 col-md-2">
+      <div class="selectWrapper" data-width="fit">
+        <select>
+                <option>Sort By</option>
+                <option>First Name</option>
+                <option>Last Name</option>
+            </select>
+      </div>
+
     </div>
-    <div class="col-sm-12 col-md-9">
+    <div class="col-xs-12 col-sm-6 col-md-6 offset-4">
       <div class="input-group">
-        <input class="form-control border-right-0">
-        <span class="input-group-addon bg-white border-left-0"><i class="ion-search"></i></span>
+        <input class="form-control" placeholder="Search">
+        <div class="input-group-addon"><i class="fa fa-search"></i></div>
       </div>
     </div>
   </div>
@@ -35,10 +46,10 @@
       <thead>
         <tr>
           <th class="checkbox"><input type="checkbox" value=""></th>
-          <th>Name</th>
+          <th>Name<i class="fa fa-chevron-down"></i></th>
           <th></th>
-          <th>Enrolled Classes</th>
-          <th>GPA</th>
+          <th>Enrolled Classes<i class="fa fa-chevron-down"></i></th>
+          <th>GPA<i class="fa fa-chevron-down"></i></th>
         </tr>
       </thead>
       <tbody>
@@ -46,7 +57,7 @@
           <td class="checkbox"><input type="checkbox" value=""></td>
           <td class=""><i class="fa fa-user-circle-o" aria-hidden="true"></i>Mark</td>
           <td>
-            <button type="button" class="btn">View Profile</button>
+            <button type="button" class="btn" (click)="viewProfile()">View Profile</button>
           </td>
           <td>5</td>
           <td>4</td>

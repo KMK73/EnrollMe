@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="194px" height="194px" viewBox="0 0 194 194" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>avatar</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="95" cy="95" r="95"></circle>
+    </defs>
+    <g id="Admin-Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2b-Student-Overview-batch-selection" transform="translate(-78.000000, -221.000000)">
+            <g id="avatar" transform="translate(80.000000, 223.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" stroke="#5E616A" stroke-width="3" xlink:href="#path-1"></use>
+                <g id="Group-24" mask="url(#mask-2)" fill="#5D616A">
+                    <g transform="translate(39.000000, 64.000000)">
+                        <ellipse id="Oval-8" cx="56.1126444" cy="29.5213249" rx="30.1529926" ry="29.5213249"></ellipse>
+                        <ellipse id="Oval-8-Copy" cx="57.3433788" cy="114.12083" rx="57.276699" ry="54.1507213"></ellipse>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
