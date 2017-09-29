@@ -8,6 +8,7 @@ import { StudentsComponent } from './pages/students/students.component';
 import { ProfileBarComponent } from './components/profile-bar/profile-bar.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RouterModule, Routes } from '@angular/router';
+import {FormsModule} from '@angular/forms';
 
 import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import { AlertModule, BsModalService } from 'ngx-bootstrap';
@@ -44,6 +45,7 @@ const appRoutes: Routes = [
     BootstrapModalModule,
     BootstrapModalModule.forRoot({container: document.body}),
     AlertModule.forRoot(),
+    FormsModule
   ],
   entryComponents: [
     AddStudentComponent
