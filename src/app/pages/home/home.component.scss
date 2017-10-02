@@ -65,8 +65,20 @@ $break-small: 600px;
     }
   }
   .selectWrapper {
-    width: auto;
-    display: inline-block;
+    // width: auto;
+    // display: inline-block;
+  }
+  .input-group-addon {
+    margin-left: 60%;
+    background: transparent !important;
+    border: none;
+  }
+  input.form-control {
+    // padding: 10px 0;
+    display: none;
+  }
+  i.fa.fa-search {
+    font-size: 24px;
   }
   select.sort {
     width: 100%;
@@ -74,8 +86,8 @@ $break-small: 600px;
     margin: 10px 0;
     padding: 10px 0;
   }
-  .input-group {
-    padding: 10px 0;
+  .grade-dropdown {
+    display: none;
   }
 }
 
