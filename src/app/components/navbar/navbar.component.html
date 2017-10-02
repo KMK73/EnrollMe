@@ -1,19 +1,19 @@
-<nav class="navbar navbar-toggleable-sm navbar-fixed-top navbar-light bg-faded">
-  <div class="bottom-handle">
-
+<nav id="nav" class="navbar navbar-toggleable-sm navbar-fixed-top navbar-light bg-faded" 
+ >
+  <div class="bottom-handle" (click)="toggleNavBar();">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
   </div>
-  <a class="navbar-brand" href="#"><img class="logo" src="../../../assets/images/enrollme-logo.png" /></a>
-  <ul class="navbar-nav  ml-auto">
+  <div>
+      <a class="navbar-brand" href="#">
+          <img class="logo" src="../../../assets/images/enrollme-logo.png" />
+        </a>
+  </div>
+  <ul class="navbar-nav  navbar-right">
     <li class="nav-item">
-      <div class="row">
-        <div class="col-sm-9 no-padding-right">
           <a class="nav-link" id="students" href="">Students</a>
-        </div>
-        <div class="col-sm-2 no-padding-left">
           <span class="circle">5</span>
-        </div>
-      </div>
-
     </li>
     <li class="nav-item">
       <a class="nav-link" href="">Teachers</a>

@@ -8,6 +8,7 @@
     font-weight: 600;
     line-height: 19px;
   }
+
   .margin-right {
     margin-right: 15px; 
   }
@@ -17,18 +18,16 @@
   .no-padding-left {
       padding-left: 0; 
   }
-  span {
+  .circle {
     display: inline-block;
     min-width: 20px;
     min-height: 20px; 
     padding: 2px 4px;
     color: #fff;
-    vertical-align: baseline;
-    white-space: nowrap;
     text-align: center;
-    border-radius: 13px;
+    border-radius: 50px;
     text-shadow: none;
-    line-height: 11px;
+    line-height: 10px;
     background-color: #e85656;
     font-size: 11px;
 }
@@ -42,27 +41,42 @@
   }
 }
 
-@media only screen and (max-width : 600px) {
-  .navbar{
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    transform: translateY(20px);
-    z-index: 100;
-  }
+// @media only screen and (max-width : 600px) {
+//   .navbar{
+//     position: fixed;
+//     width: 100%;
+//     left: 0;
+//     bottom: 0;
+//     transform: translateY(275px);
+//     z-index: 100;
+//     transition: 1s ease-in;
+//   }
 
-  .open{
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    height: 100%;
-    transform: translateY(0px);
-  }
+//   .open{
+//     width: 100%;
+//     top: 0;
+//     left: 0;
+//     height: 100%;
+//     transform: translateY(0px);
+//   }
 
-  .bottom-handle{
-    height: 20px;
-    background: black;
-  }
+//   .bottom-handle{
+//     height: 20px;
+//     background: #1F2536;
+//       width: 100px;
+//       height: 100px;
+//       border-radius: 50px;
+//       transform: translateY(-35px);
+//       margin : 0 auto;
+//       padding: 5px;
+//   }
+
+//   .line{
+//     height: 4px;
+//     width: 20px;
+//     border-radius: 5px;
+//     background: white;
+//     margin: 3px auto;
+//   }
   
-}
+// }

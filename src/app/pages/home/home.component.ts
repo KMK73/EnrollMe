@@ -13,19 +13,19 @@ import { MdSelect } from '@angular/material';
 })
 export class HomeComponent implements OnInit {
   // public modalRef: BsModalRef;
+  selected = 0;
+  selectedValue: string;
 
-  constructor(private router: Router, private dialogService: DialogService ) { 
+  grades = [
+    { value: '0', viewValue: 'Grade 1' },
+    { value: '1', viewValue: 'Grade 2' },
+    { value: '2', viewValue: 'Grade 3' },
+    { value: '3', viewValue: 'Grade 4' }
+  ];
+
+  constructor(private router: Router, private dialogService: DialogService) {
 
   }
-
-  selectedValue: string;
-  
-  grades = [
-    {value: '0', viewValue: 'Grade 1'},
-    {value: '1', viewValue: 'Grade 2'},
-    {value: '2', viewValue: 'Grade 3'},
-    {value: '3', viewValue: 'Grade 4'}
-  ];
 
   ngOnInit() {
   }
@@ -36,10 +36,10 @@ export class HomeComponent implements OnInit {
   }
 
   showConfirm() {
-    this.dialogService.addDialog(AddStudentComponent, {title: 'Add a Student', message: 'Alert message!!!'});
-    
+    this.dialogService.addDialog(AddStudentComponent, { title: 'Add a Student', message: 'Alert message!!!' });
+
     // let disposable = this.dialogService.addDialog(AddStudentComponent, {
-    //     title:'Confirm title', 
+    //     title:'Confirm title',
     //     message:'Confirm message'})
     //     .subscribe((isConfirmed) => {
     //         // We get dialog result
@@ -54,5 +54,37 @@ export class HomeComponent implements OnInit {
     // setTimeout(() => {
     //     disposable.unsubscribe();
     // }, 10000);
-}
+  }
+
+  toggleVisibility(event) {
+    console.log(event);
+    
+    let totalRowCount = 0;
+    let checkCount = 0;
+    let table = document.getElementById("studentTable");
+    let rows = table.getElementsByTagName("tr");
+    // for each table row 
+    for (let i = 0; i < rows.length; i++) {
+      totalRowCount++;
+      // get all checkbox inside row 
+      // if (rows[i].getElementsByTagName("input").length > 0) {
+      //   if (rows[i].getElementsByTagName("input").checked === true) {
+      //     checkCount++;
+      //   }
+      // }
+    }
+    let message = "Total Row Count: " + totalRowCount;
+    message += "\ncheckCount Count: " + checkCount;
+    alert(message);
+  }
+
+  // var table = $('#example').DataTable();
+
+  //    $('#example tbody').on( 'click', 'tr', function () {
+  //        $(this).toggleClass('selected');
+  //    } );
+
+  //    $('#button').click( function () {
+  //        alert( table.rows('.selected').data().length +' row(s) selected' );
+  //    } );
 }
