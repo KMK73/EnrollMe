@@ -1,5 +1,5 @@
 $backgroundDash: #F1F6FA;
-$break-small: 420px;
+$break-small: 600px;
 .top-bar {
   border: 1px solid #CDDBE5;
   background-color: #FFFFFF;
@@ -54,12 +54,23 @@ $break-small: 420px;
   }
 }
 
+// responsive mobile 
 @media screen and (max-width: $break-small) {
-  button.btn.pull-right.blur-btn {
-    width: 100% !important;
+  .top-bar {
+    md-select {
+      display: none;
+    }
+    .border-right {
+      border-right: none;
+    }
+  }
+  .selectWrapper {
+    width: auto;
+    display: inline-block;
   }
   select.sort {
     width: 100%;
+    display: inline-block;
     margin: 10px 0;
     padding: 10px 0;
   }
@@ -76,7 +87,6 @@ $break-small: 420px;
   .margin {
     margin: 15px 0;
   }
-
   input.form-control {
     color: #474C4F;
     font-size: 14px;

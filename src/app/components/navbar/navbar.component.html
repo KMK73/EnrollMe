@@ -1,5 +1,4 @@
-<nav id="nav" class="navbar navbar-toggleable-sm navbar-fixed-top navbar-light bg-faded" 
- >
+<nav id="nav" class="navbar navbar-toggleable-sm navbar-fixed-top navbar-light bg-faded">
   <div class="bottom-handle" (click)="toggleNavBar();">
     <div class="line"></div>
     <div class="line"></div>
@@ -9,18 +8,21 @@
       <a class="navbar-brand" href="#">
           <img class="logo" src="../../../assets/images/enrollme-logo.png" />
         </a>
+        <a class="open" (click)="toggleNavBar();">
+            <img class="close" src="../../../assets/images/close-icon-white.svg" />
+        </a>
   </div>
   <ul class="navbar-nav  navbar-right">
     <li class="nav-item">
-          <a class="nav-link" id="students" href="">Students</a>
+          <i class="fa fa-briefcase open" aria-hidden="true"></i><a class="nav-link" id="students" href="">Students</a>
           <span class="circle">5</span>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="">Teachers</a>
+        <i class="fa fa-briefcase open" aria-hidden="true"></i><a class="nav-link" href="">Teachers</a>
     </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                <i class="fa fa-user-circle-o desktop-icon" aria-hidden="true"></i> Admin
               </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
         <a class="dropdown-item" href="#">Action</a>
