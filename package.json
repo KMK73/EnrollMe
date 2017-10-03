@@ -2,15 +2,17 @@
     "name": "enroll-me",
     "version": "0.0.0",
     "license": "MIT",
-    "main": "app.js",
+    "main": "server.js",
     "scripts": {
         "ng": "ng",
-        "start": "node server.js",
-        "build": "ng build",
+        "start": "ng build && node server.js",
+        "build": "ng build && node server.js",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "postinstall": "ng build --aot -prod"
+        "postinstall": "ng build --aot -prod",
+        "run-watch": "ng build && node server.js",
+        "preinstall": "npm install -g @angular/cli"
     },
     "engines": {
         "node": "6.10.3",
