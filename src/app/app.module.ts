@@ -10,13 +10,12 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { RouterModule, Routes } from '@angular/router';
 import {FormsModule} from '@angular/forms';
 
-import { BootstrapModalModule } from 'ng2-bootstrap-modal';
-import { AlertModule, BsModalService } from 'ngx-bootstrap';
-import { AddStudentComponent } from './components/add-student/add-student.component';
+
+import { AlertModule, BsModalService, ModalModule } from 'ngx-bootstrap';
 import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MdSelectModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
+// import * as jQuery from 'jquery';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -24,6 +23,7 @@ const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: HomeComponent }
 ];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +32,6 @@ const appRoutes: Routes = [
     StudentsComponent,
     ProfileBarComponent,
     ProfileComponent,
-    AddStudentComponent
   ],
   imports: [
     BrowserModule,
@@ -44,13 +43,13 @@ const appRoutes: Routes = [
     MdToolbarModule,
     MdIconModule,
     MdSelectModule,
-    BootstrapModalModule,
-    BootstrapModalModule.forRoot({container: document.body}),
     AlertModule.forRoot(),
-    FormsModule
+    NgbModule.forRoot(),
+    FormsModule,
+    // BootstrapModalModule,
+    // BootstrapModalModule.forRoot({container: document.body}),
   ],
   entryComponents: [
-    AddStudentComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

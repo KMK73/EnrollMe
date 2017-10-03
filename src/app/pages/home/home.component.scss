@@ -1,128 +1,121 @@
 $backgroundDash: #F1F6FA;
 $break-small: 600px;
 .top-bar {
-  border: 1px solid #CDDBE5;
-  background-color: #FFFFFF;
-  box-shadow: 0 2px 0 0 rgba(221, 221, 221, 0.5);
-  .row {
-    min-height: 90px;
-  }
-  h3 {
-    margin-bottom: 0;
-  }
-  span {
-    opacity: 0.4;
-    color: #1F2536;
-    font-family: "Open Sans";
-    font-size: 14px;
-    font-weight: 600;
-    padding-left: 18px;
-  }
-  .border-right {
-    border-right: 1px solid #E1E9F0;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-  .pull-right {
-    float: right !important; // Use of important emulates bootstrap
-  }
-  .hr {
-    height: 40px;
-    width: 1px;
-    background-color: #E1E9F0;
-  }
-  .mat-select {
-    padding-top: 0;
-    padding-left: 10px;
-    font-family: "Open Sans";
-    .mat-select-trigger {
-      font-size: 14px;
+    border: 1px solid #CDDBE5;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 0 0 rgba(221, 221, 221, 0.5);
+    .row {
+        min-height: 90px;
     }
-  }
+    h3 {
+        margin-bottom: 0;
+    }
+    span {
+        opacity: 0.4;
+        color: #1F2536;
+        font-family: "Open Sans";
+        font-size: 14px;
+        font-weight: 600;
+        padding-left: 18px;
+    }
+    .border-right {
+        border-right: 1px solid #E1E9F0;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .pull-right {
+        float: right !important; // Use of important emulates bootstrap
+    }
+    .hr {
+        height: 40px;
+        width: 1px;
+        background-color: #E1E9F0;
+    }
+    .mat-select {
+        padding-top: 0;
+        padding-left: 10px;
+        font-family: "Open Sans";
+        .mat-select-trigger {
+            font-size: 14px;
+        }
+    }
 }
 
 .main-dash {
-  background-color: $backgroundDash;
-  .padding {
-    padding: 30px 0px;
-  }
-  .margin {
-    margin: 15px 0;
-  }
-  input.form-control {
-    color: #474C4F;
-    font-size: 14px;
-  }
-  .input-group {
-    min-height: 45px;
-    .input-group-addon {
-      background: white;
-      border-left: none;
+    background-color: $backgroundDash;
+    .padding {
+        padding: 30px 0px;
     }
-  }
-  .table>tbody>tr>td {
-    vertical-align: middle;
-  }
-  table {
-    background-color: #FFFFFF;
-    border-radius: 3px 3px 0 0;
-    .checkbox {
-      vertical-align: middle;
-      text-align: center;
-      padding: 5px;
-      max-width: 70px;
+    .margin {
+        margin: 15px 0;
     }
-    input[type="checkbox"] {
-      height: 21px;
-      width: 21px;
-      border: 1px solid #CDDBE5;
-      border-radius: 3px;
-      background-color: #FFFFFF;
+    input.form-control {
+        color: #474C4F;
+        font-size: 14px;
     }
-    thead {
-      color: #1F2536;
-      font-size: 12px;
-      font-weight: 600;
-      line-height: 17px;
-    }
-    tbody {
-      color: #3D3D3D;
-      tr {
-        border: 1px solid #E1E9F0;
-        button {
-          border: 1px solid #E8EBF0;
-          border-radius: 3px;
-          background-color: #F4F7FA;
-          color: #73787D;
-          font-family: "Open Sans";
-          font-size: 12px;
-          font-weight: 600;
-          line-height: 17px;
-          text-align: center;
+    .input-group {
+        min-height: 45px;
+        .input-group-addon {
+            background: white;
+            border-left: none;
         }
-        td {
-          font-family: "Open Sans";
-          font-size: 14px;
-          line-height: 19px;
-        }
-      }
     }
-  }
+    .table>tbody>tr>td {
+        vertical-align: middle;
+    }
+    table {
+        background-color: #FFFFFF;
+        border-radius: 3px 3px 0 0;
+        .checkbox {
+            vertical-align: middle;
+            text-align: center;
+            padding: 5px;
+            max-width: 70px;
+        }
+        input[type="checkbox"] {
+            height: 21px;
+            width: 21px;
+            border: 1px solid #CDDBE5;
+            border-radius: 3px;
+            background-color: #FFFFFF;
+        }
+        thead {
+            color: #1F2536;
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 17px;
+        }
+        tbody {
+            color: #3D3D3D;
+            tr {
+                border: 1px solid #E1E9F0;
+                button {
+                    border: 1px solid #E8EBF0;
+                    border-radius: 3px;
+                    background-color: #F4F7FA;
+                    color: #73787D;
+                    font-family: "Open Sans";
+                    font-size: 12px;
+                    font-weight: 600;
+                    line-height: 17px;
+                    text-align: center;
+                }
+                td {
+                    font-family: "Open Sans";
+                    font-size: 14px;
+                    line-height: 19px;
+                }
+            }
+        }
+    }
 }
 
-.modal {
-  label {
-    color: #474C4F;
-    font-family: "Open Sans";
-    font-size: 14px;
-    line-height: 19px;
-  }
-  .blur-btn-blue { 
-    min-height: 42px; 
-    width: 100%;
-  }
+.card {
+    margin: 10px 15px;
+    padding: 10px;
+}
 
-  .section-hr {
+.section-hr {
     width: 100%;
     height: 20px;
     border-bottom: 1px solid #D6D6D6;
@@ -130,93 +123,105 @@ $break-small: 600px;
     margin-top: 20px;
     margin-bottom: 20px;
     span {
-      font-size: 12px;
-      background-color: white;
-      padding: 10px 10px;
+        font-size: 12px;
+        background-color: white;
+        padding: 10px 10px;
     }
-  } //table rows
-  .class-rows {
-    p {
-      color: #6A7075;
-      font-size: 14px;
-      letter-spacing: 1px;
-      line-height: 19px;
-      text-align: center;
-      margin-bottom: 2px;
+}
+
+button.btn.blur-btn-blue {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.modal {
+    label {
+        color: #474C4F;
+        font-family: "Open Sans";
+        font-size: 14px;
+        line-height: 19px;
     }
-    .desciptor {
-      color: #6A7075;
-      font-size: 10px;
-      font-weight: 600;
-      line-height: 14px;
-      text-align: center;
+    .blur-btn-blue {
+        min-height: 42px;
+        width: 100%;
     }
-    .card {
-      padding: 10px;
-      margin: 10px 0;
-      .delete {
-        // margin-right: 6px; 
-        color: #AFBAC2;
-      }
+    //table rows
+    .class-rows {
+        p {
+            color: #6A7075;
+            font-size: 14px;
+            letter-spacing: 1px;
+            line-height: 19px;
+            text-align: center;
+            margin-bottom: 2px;
+        }
+        .desciptor {
+            color: #6A7075;
+            font-size: 10px;
+            font-weight: 600;
+            line-height: 14px;
+            text-align: center;
+        }
+        .card {
+            padding: 10px;
+            margin: 10px 15px;
+            .delete {
+                // margin-right: 6px; 
+                color: #AFBAC2;
+            }
+        }
     }
-  }
 }
 
 // responsive mobile 
 @media screen and (max-width: $break-small) {
-  .top-bar {
-    md-select {
-      display: none;
+    .top-bar {
+        md-select {
+            display: none;
+        }
+        .border-right {
+            border-right: none;
+        }
+        .grade-dropdown {
+            display: none;
+        }
     }
-    .border-right {
-      border-right: none;
+    .input-group-addon {
+        margin-left: 60%;
+        background: transparent !important;
+        border: none;
     }
-    .grade-dropdown {
-      display: none;
+    .search {
+        input.form-control {
+            // padding: 10px 0;
+            display: none;
+        }
     }
-  }
-  .input-group-addon {
-    margin-left: 60%;
-    background: transparent !important;
-    border: none;
-  }
-  .search {
-    input.form-control {
-      // padding: 10px 0;
-      display: none;
+    i.fa.fa-search {
+        font-size: 24px;
     }
-  }
-
-  i.fa.fa-search {
-    font-size: 24px;
-  }
-  select.sort {
-    width: 100%;
-    display: inline-block;
-    margin: 10px 0;
-    padding: 10px 0;
-  }
-
-  .modal {
-    .blur-btn-blue { 
-      margin: 10px 0;
+    select.sort {
+        width: 100%;
+        display: inline-block;
+        margin: 10px 0;
+        padding: 10px 0;
     }
-    label {
-      margin-top: 5px; 
+    .modal {
+        .blur-btn-blue {
+            margin: 10px 0;
+        }
+        label {
+            margin-top: 5px;
+        }
     }
-  }
-  .class-rows {
-    p {
-      text-align: left !important;
-      padding-left: 10px;
-      margin-top: 8px;
+    .class-rows {
+        p {
+            text-align: left !important;
+            padding-left: 10px;
+            margin-top: 8px;
+        }
+        .selectWrapper {
+            margin: 4px 0;
+        }
     }
-    .selectWrapper {
-      margin: 4px 0;
-    }
-  }
 }
-
-
-
-

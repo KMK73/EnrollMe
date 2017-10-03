@@ -1,239 +1,239 @@
 <div class="container-fluid top-bar">
-  <div class="row">
-    <!-- <div class="col-sm-6 col-md-8" style="background:red">
+    <div class="row">
+        <!-- <div class="col-sm-6 col-md-8" style="background:red">
       <div class="row" style="background:green"> -->
-    <div class="col-6 col-md-3 border-right align-self-center">
-      <h3>Student Enrollment</h3>
-    </div>
-    <div class="col-1 col-md-3 grade-dropdown align-self-center">
-      <form>
-        <md-select placeholder="GRADE 4" name="grade">
-          <md-option *ngFor="let grade of grades" [value]="grade.value">
-            {{grade.viewValue}}
-          </md-option>
-        </md-select>
-      </form>
-    </div>
-    <!-- </div>
+        <div class="col-6 col-md-3 border-right align-self-center">
+            <h3>Student Enrollment</h3>
+        </div>
+        <div class="col-1 col-md-3 grade-dropdown align-self-center">
+            <form>
+                <md-select placeholder="GRADE 4" name="grade">
+                    <md-option *ngFor="let grade of grades" [value]="grade.value">
+                        {{grade.viewValue}}
+                    </md-option>
+                </md-select>
+            </form>
+        </div>
+        <!-- </div>
     </div> -->
-    <div class="col-6 offset-0 offset-md-4 col-md-2  align-self-center student-btn">
-      <button type="button" class="btn pull-right blur-btn" (click)="showStudentModal()">Add Student</button>
+        <div class="col-6 offset-0 offset-md-4 col-md-6  align-self-center student-btn">
+            <button type="button" class="btn pull-right blur-btn" (click)="open(content)">Add Student</button>
+        </div>
     </div>
-  </div>
 </div>
 <div class="container-fluid main-dash">
-  <div class="row padding">
+    <div class="row padding">
 
-    <!-- MODAL -->
-    <div #myModal class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Add a Student</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-12 col-md-6">
-                  <label>First Name</label>
-                  <input type="text" class="form-control">
-                </div>
-                <div class="col-12 col-md-6 ml-auto">
-                  <label>Last Name</label>
-                  <input type="text" class="form-control">
-                </div>
-              </div>
-              <!-- HR  -->
-              <div class="section-hr">
-                <span style="">
+        <!-- MODAL -->
+        <!-- <div #myModal class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> -->
+        <ng-template #content let-c="close" let-d="dismiss">
+            <!-- <div class="modal-dialog" role="document"> -->
+            <!-- <div class="modal-content"> -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add a Student</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="c('Close click')">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <label>First Name</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-12 col-md-6 ml-auto">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <!-- HR  -->
+                    <div class="section-hr">
+                        <span style="">
                         Assign Classes
                       </span>
-              </div>
-              <!-- dropdowns -->
-              <div class="row">
-                <div class="col-12 col-md-5 my-auto">
-                  <label>Subject</label>
-                  <div class="selectWrapper" data-width="fit">
-                    <select placeholder="">               
+                    </div>
+                    <!-- dropdowns -->
+                    <div class="row">
+                        <div class="col-12 col-md-5 my-auto">
+                            <label>Subject</label>
+                            <div class="selectWrapper" data-width="fit">
+                                <select placeholder="">               
                         <option>Science</option>
                     </select>
-                  </div>
-                </div>
-                <div class="col-12 col-md-5 my-auto">
-                    <label>Teacher</label>
-                    <div class="selectWrapper" data-width="fit">
-                      <select placeholder="">               
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-5 my-auto">
+                            <label>Teacher</label>
+                            <div class="selectWrapper" data-width="fit">
+                                <select placeholder="">               
                           <option>Science</option>
                       </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-2 mt-auto">
+                            <button type="button" class="btn blur-btn-blue">Add Class</button>
+                        </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-2 mt-auto">
-                    <button type="button" class="btn blur-btn-blue">Add Class</button>
-                </div>
-              </div>
-              <!-- TABLE -->
-              <div class="row padding class-rows">
+                    <!-- TABLE -->
+                    <div class="row padding class-rows">
 
-                <div class="card" style="width:100%; 	background-color: #EEF3F5;">
-                  <div class="row">
-                    <div class="col-12 col-sm-4 my-auto">
-                      <div class="selectWrapper" data-width="fit">
-                        <select placeholder="Science">               
+                        <div class="card" style="width:100%; 	background-color: #EEF3F5;">
+                            <div class="row">
+                                <div class="col-12 col-sm-4 my-auto">
+                                    <div class="selectWrapper" data-width="fit">
+                                        <select placeholder="Science">               
                                                 <option>Science</option>
                                             </select>
-                      </div>
-                    </div>
-                    <div class="col-12 col-sm-4 my-auto">
-                      <div class="selectWrapper" data-width="fit">
-                        <select placeholder="Science">               
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4 my-auto">
+                                    <div class="selectWrapper" data-width="fit">
+                                        <select placeholder="Science">               
                                     <option>Mrs. Fields</option>
                                 </select>
-                      </div>
-                    </div>
-                    <div class="col-10 col-sm-3 my-auto">
-                      <p>14/24</p>
-                      <p class="desciptor">ENROLLED</p>
-                    </div>
-                    <div class="col-2 col-sm-1 my-auto delete">
-                      <i class="fa fa-trash" aria-hidden="true"></i>
-                    </div>
-                  </div>
+                                    </div>
+                                </div>
+                                <div class="col-10 col-sm-3 my-auto">
+                                    <p>14/24</p>
+                                    <p class="desciptor">ENROLLED</p>
+                                </div>
+                                <div class="col-2 col-sm-1 my-auto delete">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </div>
+                            </div>
 
-                </div>
+                        </div>
 
-                <!-- second card  -->
-                <div class="card" style="width:100%;">
-                  <div class="row">
-                    <div class="col-12 col-sm-4 my-auto">
-                      <div class="selectWrapper" data-width="fit">
-                        <select placeholder="Science">               
+                        <!-- second card  -->
+                        <div class="card" style="width:100%;">
+                            <div class="row">
+                                <div class="col-12 col-sm-4 my-auto">
+                                    <div class="selectWrapper" data-width="fit">
+                                        <select placeholder="Science">               
                                             <option>Science</option>
                                         </select>
-                      </div>
-                    </div>
-                    <div class="col-12 col-sm-4 my-auto">
-                      <div class="selectWrapper" data-width="fit">
-                        <select placeholder="Science">               
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4 my-auto">
+                                    <div class="selectWrapper" data-width="fit">
+                                        <select placeholder="Science">               
                                 <option>Mrs. Fields</option>
                             </select>
-                      </div>
+                                    </div>
+                                </div>
+                                <div class="col-10 col-sm-3 my-auto">
+                                    <p>14/24</p>
+                                    <p class="desciptor">ENROLLED</p>
+                                </div>
+                                <div class="col-2 col-sm-1 my-auto delete">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="col-10 col-sm-3 my-auto">
-                      <p>14/24</p>
-                      <p class="desciptor">ENROLLED</p>
-                    </div>
-                    <div class="col-2 col-sm-1 my-auto delete">
-                      <i class="fa fa-trash" aria-hidden="true"></i>
-                    </div>
-                  </div>
+                    <!--row-->
 
                 </div>
-              </div>
-              <!--row-->
-
             </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
-            <button type="button" class="btn blur-btn">Save</button>
-          </div>
-        </div>
-      </div>
-    </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-close" data-dismiss="modal" (click)="c('Close click')">Close</button>
+                <button type="button" class="btn blur-btn">Save</button>
+            </div>
+            <!-- </div> -->
+            <!-- </div> -->
+        </ng-template>
 
-    <div class="col-8 col-sm-4 col-md-2">
-      <div class="selectWrapper" data-width="fit">
-        <select>
+        <div class="col-8 col-sm-4 col-md-2">
+            <div class="selectWrapper" data-width="fit">
+                <select>
                 <option>Sort By</option>
                 <option>First Name</option>
                 <option>Last Name</option>
             </select>
-      </div>
+            </div>
 
+        </div>
+        <div class="col-3 col-sm-4 col-md-6 ml-auto search">
+            <div class="input-group">
+                <input class="form-control" placeholder="Search">
+                <div class="input-group-addon"><i class="fa fa-search"></i></div>
+            </div>
+        </div>
     </div>
-    <div class="col-3 col-sm-4 col-md-6 offset-md-4 search">
-      <div class="input-group">
-        <input class="form-control" placeholder="Search">
-        <div class="input-group-addon"><i class="fa fa-search"></i></div>
-      </div>
+    <div class="row margin">
+        <!--checkbox marked row -->
+        <div *ngIf="marked" class="col-12 alert alert-success" role="alert">
+            <strong>{{selected}} student selected</strong> <button class="btn delete-btn">Delete</button> <i class="fa fa-times pull-right" aria-hidden="true" (click)="toggleVisibility($event)"></i>
+        </div>
+        <table class="table table-hover" id="studentTable">
+            <thead>
+                <tr>
+                    <th class="checkbox"><input type="checkbox" value=""></th>
+                    <th>Name<i class="fa fa-chevron-down"></i></th>
+                    <th></th>
+                    <th>Enrolled Classes<i class="fa fa-chevron-down"></i></th>
+                    <th>GPA<i class="fa fa-chevron-down"></i></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="">
+                    <td class="checkbox"><input type="checkbox" value="" (change)="toggleVisibility($event)"></td>
+                    <td class=""><i class="fa fa-user-circle-o" aria-hidden="true"></i>Anderson, Clarissa</td>
+                    <td>
+                        <button type="button" class="btn d-none d-md-block" (click)="viewProfile()">View Profile</button>
+
+                        <i class="fa fa-id-card-o d-md-none d-lg-none d-xl-none" style="	color: #474C4F;" aria-hidden="true" (click)="viewProfile()"></i>
+                    </td>
+                    <td>4</td>
+                    <td>4</td>
+                </tr>
+                <tr class="">
+                    <td class="checkbox"><input type="checkbox" value="" (change)="toggleVisibility($event)"></td>
+                    <td class=""><i class="fa fa-user-circle-o" aria-hidden="true"></i>Clark, Christina</td>
+                    <td>
+                        <button type="button" class="btn d-none d-md-block" (click)="viewProfile()">View Profile</button>
+
+                        <i class="fa fa-id-card-o d-md-none d-lg-none d-xl-none" style="color: #474C4F;" aria-hidden="true" (click)="viewProfile()"></i>
+                    </td>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+                <tr class="">
+                    <td class="checkbox"><input type="checkbox" value="" (change)="toggleVisibility($event)"></td>
+                    <td class=""><i class="fa fa-user-circle-o" aria-hidden="true"></i>Lopez, Nick</td>
+                    <td>
+                        <button type="button" class="btn d-none d-md-block" (click)="viewProfile()">View Profile</button>
+
+                        <i class="fa fa-id-card-o d-md-none d-lg-none d-xl-none" style="color: #474C4F;" aria-hidden="true" (click)="viewProfile()"></i>
+                    </td>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+                <tr class="">
+                    <td class="checkbox"><input type="checkbox" value="" (change)="toggleVisibility($event)"></td>
+                    <td class=""><i class="fa fa-user-circle-o" aria-hidden="true"></i>Robinson, Eric</td>
+                    <td>
+                        <button type="button" class="btn d-none d-md-block" (click)="viewProfile()">View Profile</button>
+
+                        <i class="fa fa-id-card-o d-md-none d-lg-none d-xl-none" style="color: #474C4F;" aria-hidden="true" (click)="viewProfile()"></i>
+                    </td>
+                    <td>4</td>
+                    <td>4</td>
+                </tr>
+                <tr class="">
+                    <td class="checkbox"><input type="checkbox" value="" (change)="toggleVisibility($event)"></td>
+                    <td class=""><i class="fa fa-user-circle-o" aria-hidden="true"></i>Sanchez, Brett </td>
+                    <td>
+                        <button type="button" class="btn d-none d-md-block" (click)="viewProfile()">View Profile</button>
+
+                        <i class="fa fa-id-card-o d-md-none d-lg-none d-xl-none" style="color: #474C4F;" aria-hidden="true" (click)="viewProfile()"></i>
+                    </td>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-  </div>
-  <div class="row margin">
-    <!--checkbox marked row -->
-    <div *ngIf="marked" class="alert alert-success" role="alert">
-      <strong>{{selected}} class selected</strong> <button class="btn delete-btn">Delete</button> <i class="fa fa-times pull-right"
-        aria-hidden="true" (click)="toggleVisibility($event)"></i>
-    </div>
-    <table class="table table-hover" id="studentTable">
-      <thead>
-        <tr>
-          <th class="checkbox"><input type="checkbox" value=""></th>
-          <th>Name<i class="fa fa-chevron-down"></i></th>
-          <th></th>
-          <th>Enrolled Classes<i class="fa fa-chevron-down"></i></th>
-          <th>GPA<i class="fa fa-chevron-down"></i></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="">
-          <td class="checkbox"><input type="checkbox" value="" (change)="toggleVisibility($event)"></td>
-          <td class=""><i class="fa fa-user-circle-o" aria-hidden="true"></i>Anderson, Clarissa</td>
-          <td>
-            <button type="button" class="btn hidden-sm-down" (click)="viewProfile()">View Profile</button>
-
-            <i class="fa fa-id-card-o hidden-md-up" style="	color: #474C4F;" aria-hidden="true" (click)="viewProfile()"></i>
-          </td>
-          <td>4</td>
-          <td>4</td>
-        </tr>
-        <tr class="">
-          <td class="checkbox"><input type="checkbox" value="" (change)="toggleVisibility($event)"></td>
-          <td class=""><i class="fa fa-user-circle-o" aria-hidden="true"></i>Clark, Christina</td>
-          <td>
-            <button type="button" class="btn hidden-sm-down" (click)="viewProfile()">View Profile</button>
-
-            <i class="fa fa-id-card-o hidden-md-up" style="color: #474C4F;" aria-hidden="true" (click)="viewProfile()"></i>
-          </td>
-          <td>3</td>
-          <td>4</td>
-        </tr>
-        <tr class="">
-          <td class="checkbox"><input type="checkbox" value="" (change)="toggleVisibility($event)"></td>
-          <td class=""><i class="fa fa-user-circle-o" aria-hidden="true"></i>Lopez, Nick</td>
-          <td>
-            <button type="button" class="btn hidden-sm-down" (click)="viewProfile()">View Profile</button>
-
-            <i class="fa fa-id-card-o hidden-md-up" style="color: #474C4F;" aria-hidden="true" (click)="viewProfile()"></i>
-          </td>
-          <td>3</td>
-          <td>4</td>
-        </tr>
-        <tr class="">
-          <td class="checkbox"><input type="checkbox" value="" (change)="toggleVisibility($event)"></td>
-          <td class=""><i class="fa fa-user-circle-o" aria-hidden="true"></i>Robinson, Eric</td>
-          <td>
-            <button type="button" class="btn hidden-sm-down" (click)="viewProfile()">View Profile</button>
-
-            <i class="fa fa-id-card-o hidden-md-up" style="color: #474C4F;" aria-hidden="true" (click)="viewProfile()"></i>
-          </td>
-          <td>4</td>
-          <td>4</td>
-        </tr>
-        <tr class="">
-          <td class="checkbox"><input type="checkbox" value="" (change)="toggleVisibility($event)"></td>
-          <td class=""><i class="fa fa-user-circle-o" aria-hidden="true"></i>Sanchez, Brett </td>
-          <td>
-            <button type="button" class="btn hidden-sm-down" (click)="viewProfile()">View Profile</button>
-
-            <i class="fa fa-id-card-o hidden-md-up" style="color: #474C4F;" aria-hidden="true" (click)="viewProfile()"></i>
-          </td>
-          <td>3</td>
-          <td>4</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 </div>

@@ -2,8 +2,7 @@ import { Component, OnInit, TemplateRef, ViewChild, ElementRef } from '@angular/
 import { Router } from '@angular/router';
 // import { BsModalService } from 'ngx-bootstrap';
 // import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
-import { AddStudentComponent } from '../../components/add-student/add-student.component';
-import { DialogService } from 'ng2-bootstrap-modal';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { MdSelect } from '@angular/material';
 declare var jQuery: any;
 declare var $: any;
@@ -16,8 +15,10 @@ declare var $: any;
 
 export class HomeComponent implements OnInit {
   
-  // public modalRef: BsModalRef;
+  marked: false;
+  theCheckbox: false;
   selected = 0;
+  
   selectedValue: string;
 
   grades = [
@@ -28,8 +29,9 @@ export class HomeComponent implements OnInit {
   ];
 
   @ViewChild('myModal') myModal: ElementRef;
+  closeResult: string;
 
-  constructor(private router: Router, private dialogService: DialogService) {
+  constructor(private router: Router, private modalService: NgbModal) {
 
   }
 
@@ -41,41 +43,59 @@ export class HomeComponent implements OnInit {
     this.router.navigate(link);
   }
 
-  showStudentModal() {
-    console.log('modal click');
-     // open modal using jQuery
-     jQuery(this.myModal.nativeElement).modal('show');
+  open(content) {
+    this.modalService.open(content).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
   }
-
-  toggleVisibility(event) {
-    console.log(event);
-
-    let totalRowCount = 0;
-    const checkCount = 0;
-    const table = document.getElementById("studentTable");
-    const rows = table.getElementsByTagName('tr');
-    // for each table row
-    for (let i = 0; i < rows.length; i++) {
-      totalRowCount++;
-      // get all checkbox inside row
-      // if (rows[i].getElementsByTagName("input").length > 0) {
-      //   if (rows[i].getElementsByTagName("input").checked === true) {
-      //     checkCount++;
-      //   }
-      // }
+  
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
     }
-    let message = 'Total Row Count: ' + totalRowCount;
-    message += '\ncheckCount Count: ' + checkCount;
-    alert(message);
   }
 
-  // var table = $('#example').DataTable();
+  // showStudentModal() {
+  //   console.log('modal click');
+  //    // open modal using jQuery
+  //    jQuery(this.myModal.nativeElement).modal('show');
+  // }
 
-  //    $('#example tbody').on( 'click', 'tr', function () {
-  //        $(this).toggleClass('selected');
-  //    } );
+  toggleVisibility(e) {
+    this.marked = e.target.checked;
+    if (this.marked) {
+      this.selected++;
+    }else {
+      this.selected--;
+    }
+    console.log(this.selected);
+  }
 
-  //    $('#button').click( function () {
-  //        alert( table.rows('.selected').data().length +' row(s) selected' );
-  //    } );
+  // toggleVisibility(event) {
+  //   console.log(event);
+
+  //   let totalRowCount = 0;
+  //   const checkCount = 0;
+  //   const table = document.getElementById("studentTable");
+  //   const rows = table.getElementsByTagName('tr');
+  //   // for each table row
+  //   for (let i = 0; i < rows.length; i++) {
+  //     totalRowCount++;
+  //     // get all checkbox inside row
+  //     // if (rows[i].getElementsByTagName("input").length > 0) {
+  //     //   if (rows[i].getElementsByTagName("input").checked === true) {
+  //     //     checkCount++;
+  //     //   }
+  //     // }
+  //   }
+  //   let message = 'Total Row Count: ' + totalRowCount;
+  //   message += '\ncheckCount Count: ' + checkCount;
+  //   // alert(message);
+  // }
 }

@@ -1,221 +1,219 @@
 <div class="container-fluid top-bar">
     <div class="row">
 
-      <div class="col-6 col-md-3 border-right align-self-center">
-        <h3>Student Overview</h3>
-      </div>
-      <div class="col-1 col-md-3 grade-dropdown align-self-center">
-        <form>
-          <md-select placeholder="GRADE 4" name="grade">
-            <md-option *ngFor="let grade of grades" [value]="grade.value">
-              {{grade.viewValue}}
-            </md-option>
-          </md-select>
-        </form>
-      </div>
-
-      <div class="col-6 offset-0 offset-md-4 col-md-2  align-self-center student-btn">
-        <button type="button" class="btn pull-right blur-btn" (click)="showStudentModal()">Add Class</button>
-      </div>
-    </div>
-  </div>
-<div class="container-fluid  main-dash">
-  <app-profile-bar></app-profile-bar>
-
-  <div class="row margin">
-
-    <!-- MODAL -->
-    <div #myModal class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Add a Student</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-          </div>
-          <div class="modal-body">
-            <div class="container-fluid">
-             
-              
-              <!-- dropdowns -->
-              <div class="row">
-                <div class="col-12 col-md-5 my-auto">
-                  <label>Subject</label>
-                  <div class="selectWrapper" data-width="fit">
-                    <select placeholder="">               
-                            <option>Science</option>
-                        </select>
-                  </div>
-                </div>
-                <div class="col-12 col-md-5 my-auto">
-                  <label>Teacher</label>
-                  <div class="selectWrapper" data-width="fit">
-                    <select placeholder="">               
-                              <option>Science</option>
-                          </select>
-                  </div>
-                </div>
-                <div class="col-12 col-md-2 mt-auto">
-                  <button type="button" class="btn blur-btn-blue">Add Class</button>
-                </div>
-              </div>
-              <!-- TABLE -->
-              <div class="row padding class-rows">
-
-                <div class="card" style="width:100%; 	background-color: #EEF3F5;">
-                  <div class="row">
-                    <div class="col-12 col-sm-4 my-auto">
-                      <div class="selectWrapper" data-width="fit">
-                        <select placeholder="Science">               
-                                                    <option>Science</option>
-                                                </select>
-                      </div>
-                    </div>
-                    <div class="col-12 col-sm-4 my-auto">
-                      <div class="selectWrapper" data-width="fit">
-                        <select placeholder="Science">               
-                                        <option>Mrs. Fields</option>
-                                    </select>
-                      </div>
-                    </div>
-                    <div class="col-10 col-sm-3 my-auto">
-                      <p>14/24</p>
-                      <p class="desciptor">ENROLLED</p>
-                    </div>
-                    <div class="col-2 col-sm-1 my-auto delete">
-                      <i class="fa fa-trash" aria-hidden="true"></i>
-                    </div>
-                  </div>
-
-                </div>
-
-                <!-- second card  -->
-                <div class="card" style="width:100%;">
-                  <div class="row">
-                    <div class="col-12 col-sm-4 my-auto">
-                      <div class="selectWrapper" data-width="fit">
-                        <select placeholder="Science">               
-                                                <option>Science</option>
-                                            </select>
-                      </div>
-                    </div>
-                    <div class="col-12 col-sm-4 my-auto">
-                      <div class="selectWrapper" data-width="fit">
-                        <select placeholder="Science">               
-                                    <option>Mrs. Fields</option>
-                                </select>
-                      </div>
-                    </div>
-                    <div class="col-10 col-sm-3 my-auto">
-                      <p>14/24</p>
-                      <p class="desciptor">ENROLLED</p>
-                    </div>
-                    <div class="col-2 col-sm-1 my-auto delete">
-                      <i class="fa fa-trash" aria-hidden="true"></i>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <!--row-->
-
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
-            <button type="button" class="btn blur-btn">Save</button>
-          </div>
+        <div class="col-6 col-md-3 border-right align-self-center">
+            <h3>Student Overview</h3>
         </div>
-      </div>
-    </div>
+        <div class="col-1 col-md-3 grade-dropdown align-self-center">
+            <form>
+                <md-select placeholder="GRADE 4" name="grade">
+                    <md-option *ngFor="let grade of grades" [value]="grade.value">
+                        {{grade.viewValue}}
+                    </md-option>
+                </md-select>
+            </form>
+        </div>
 
-  <!--checkbox marked row -->
-  <div *ngIf="marked" class="alert alert-success" role="alert">
-    <strong>{{selected}} class selected</strong> <button class="btn delete-btn">Delete</button> <i class="fa fa-times pull-right"
-      aria-hidden="true" (click)="toggleVisibility($event)"></i>
-  </div>
-  <!-- table -->
-  <table class="table table-hover">
-    <thead>
-      <tr class="my-auto">
-        <th class="checkbox"><input type="checkbox" value=""></th>
-        <th>Subject</th>
-        <th></th>
-        <th>Teacher</th>
-        <th>GPA<i class="fa fa-chevron-down"></i></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="">
-        <td class="checkbox">
-          <input type="checkbox" [(ngModel)]="theCheckbox" data-md-icheck (change)="toggleVisibility($event)" />
-        </td>
-        <td class="">
-          <div class="selectWrapper" data-width="fit">
-            <select placeholder="Science">               
+        <div class="col-6 offset-0 offset-md-4 col-md-6  align-self-center student-btn">
+            <button type="button" class="btn pull-right blur-btn" (click)="open(content)">Add Class</button>
+        </div>
+    </div>
+</div>
+<div class="container-fluid  main-dash">
+    <app-profile-bar></app-profile-bar>
+
+    <div class="row margin">
+
+        <!-- MODAL -->
+        <!-- <div #myModal class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> -->
+        <ng-template #content let-c="close" let-d="dismiss">
+            <!-- <div class="modal-dialog" role="document"> -->
+            <!-- <div class="modal-content"> -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add a Class</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="c('Close click')">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+
+                    <!-- dropdowns -->
+                    <div class="row">
+                        <div class="col-12 col-md-5 my-auto">
+                            <label>Subject</label>
+                            <div class="selectWrapper" data-width="fit">
+                                <select placeholder="">               
                         <option>Science</option>
                     </select>
-          </div>
-        </td>
-        <td></td>
-        <td>
-          <div class="selectWrapper" data-width="fit">
-            <select placeholder="Science">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-5 my-auto">
+                            <label>Teacher</label>
+                            <div class="selectWrapper" data-width="fit">
+                                <select placeholder="">               
+                          <option>Science</option>
+                      </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-2 mt-auto">
+                            <button type="button" class="btn blur-btn-blue">Add Class</button>
+                        </div>
+                    </div>
+                    <!-- TABLE -->
+                    <div class="row padding class-rows">
+
+                        <div class="card" style="width:100%; 	background-color: #EEF3F5;">
+                            <div class="row">
+                                <div class="col-12 col-sm-4 my-auto">
+                                    <div class="selectWrapper" data-width="fit">
+                                        <select placeholder="Science">               
+                                                <option>Science</option>
+                                            </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4 my-auto">
+                                    <div class="selectWrapper" data-width="fit">
+                                        <select placeholder="Science">               
+                                    <option>Mrs. Fields</option>
+                                </select>
+                                    </div>
+                                </div>
+                                <div class="col-10 col-sm-3 my-auto">
+                                    <p>14/24</p>
+                                    <p class="desciptor">ENROLLED</p>
+                                </div>
+                                <div class="col-2 col-sm-1 my-auto delete">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- second card  -->
+                        <div class="card" style="width:100%;">
+                            <div class="row">
+                                <div class="col-12 col-sm-4 my-auto">
+                                    <div class="selectWrapper" data-width="fit">
+                                        <select placeholder="Science">               
+                                            <option>Science</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4 my-auto">
+                                    <div class="selectWrapper" data-width="fit">
+                                        <select placeholder="Science">               
+                                <option>Mrs. Fields</option>
+                            </select>
+                                    </div>
+                                </div>
+                                <div class="col-10 col-sm-3 my-auto">
+                                    <p>14/24</p>
+                                    <p class="desciptor">ENROLLED</p>
+                                </div>
+                                <div class="col-2 col-sm-1 my-auto delete">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--row-->
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-close" data-dismiss="modal" (click)="c('Close click')">Close</button>
+                <button type="button" class="btn blur-btn">Save</button>
+            </div>
+            <!-- </div> -->
+            <!-- </div> -->
+        </ng-template>
+        <!--checkbox marked row -->
+        <div *ngIf="marked" class="alert alert-success" role="alert">
+            <strong>{{selected}} class selected</strong> <button class="btn delete-btn">Delete</button> <i class="fa fa-times pull-right" aria-hidden="true" (click)="toggleVisibility($event)"></i>
+        </div>
+        <!-- table -->
+        <table class="table table-hover">
+            <thead>
+                <tr class="my-auto">
+                    <th class="checkbox"><input type="checkbox" value=""></th>
+                    <th>Subject</th>
+                    <th></th>
+                    <th>Teacher</th>
+                    <th>GPA<i class="fa fa-chevron-down"></i></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="">
+                    <td class="checkbox">
+                        <input type="checkbox" [(ngModel)]="theCheckbox" data-md-icheck (change)="toggleVisibility($event)" />
+                    </td>
+                    <td class="">
+                        <div class="selectWrapper" data-width="fit">
+                            <select placeholder="Science">               
+                        <option>Science</option>
+                    </select>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td>
+                        <div class="selectWrapper" data-width="fit">
+                            <select placeholder="Science">
                         <option>Teacher</option>
                     </select>
-          </div>
-        </td>
-        <td>3.4 B</td>
-      </tr>
-      <tr class="">
-        <td class="checkbox">
-          <input type="checkbox" data-md-icheck />
-        </td>
-        <td class="">
-          <div class="selectWrapper" data-width="fit">
-            <select placeholder="Science">
+                        </div>
+                    </td>
+                    <td>3.4 B</td>
+                </tr>
+                <tr class="">
+                    <td class="checkbox">
+                        <input type="checkbox" data-md-icheck />
+                    </td>
+                    <td class="">
+                        <div class="selectWrapper" data-width="fit">
+                            <select placeholder="Science">
                             <option>Math</option>
                             <option>Last Name</option>
                         </select>
-          </div>
-        </td>
-        <td></td>
-        <td>
-          <div class="selectWrapper" data-width="fit">
-            <select placeholder="Science">
+                        </div>
+                    </td>
+                    <td></td>
+                    <td>
+                        <div class="selectWrapper" data-width="fit">
+                            <select placeholder="Science">
                           <option>Teacher</option>
                         
                       </select>
-          </div>
-        </td>
-        <td>3.4 B</td>
-      </tr>
-      <tr class="">
-        <td class="checkbox">
-          <input type="checkbox" data-md-icheck />
-        </td>
-        <td class="">
-          <div class="selectWrapper" data-width="fit">
-            <select placeholder="Science">
+                        </div>
+                    </td>
+                    <td>3.4 B</td>
+                </tr>
+                <tr class="">
+                    <td class="checkbox">
+                        <input type="checkbox" data-md-icheck />
+                    </td>
+                    <td class="">
+                        <div class="selectWrapper" data-width="fit">
+                            <select placeholder="Science">
                               <option>History</option>
                               <option>Last Name</option>
                           </select>
-          </div>
-        </td>
-        <td></td>
-        <td>
-          <div class="selectWrapper" data-width="fit">
-            <select placeholder="Science">
+                        </div>
+                    </td>
+                    <td></td>
+                    <td>
+                        <div class="selectWrapper" data-width="fit">
+                            <select placeholder="Science">
                             <option>Teacher</option>
                           
                         </select>
-          </div>
-        </td>
-        <td>3.4 B</td>
-      </tr>
+                        </div>
+                    </td>
+                    <td>3.4 B</td>
+                </tr>
 
-    </tbody>
-  </table>
-</div>
+            </tbody>
+        </table>
+    </div>
 </div>
