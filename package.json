@@ -2,6 +2,7 @@
   "name": "enroll-me",
   "version": "0.0.0",
   "license": "MIT",
+  "main": "app.js",
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
@@ -9,7 +10,11 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot -prod"
+    "postinstall": "grunt scss:production && ng build --aot -prod"
+  },
+  "engines": {
+    "node": "6.10.3",
+    "npm": "3.10.10"
   },
   "private": true,
   "dependencies": {
@@ -17,6 +22,7 @@
     "@angular/cdk": "^2.0.0-beta.11",
     "@angular/cli": "1.4.2",
     "@angular/common": "^4.2.4",
+    "@angular/compiler-cli": "^4.2.4",    
     "@angular/compiler": "^4.2.4",
     "@angular/core": "^4.2.4",
     "@angular/forms": "^4.2.4",
@@ -54,9 +60,5 @@
     "ts-node": "~3.2.0",
     "tslint": "~5.3.2",
     "typescript": "~2.3.3"
-  },
-  "engines": {
-    "node": "6.10.3",
-    "npm": "3.10.10"
   }
 }
