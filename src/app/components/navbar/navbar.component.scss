@@ -1,6 +1,6 @@
 .navbar {
-    .logo {
-        // height: 12px; // width: 106px;
+    .navbar-nav {
+        flex-direction: inherit;
     }
     #students {
         color: #FFFFFF;
@@ -36,12 +36,15 @@
         background-color: #38AAF9;
     }
     //hide mobile bottom nav 
-    .bottom-handle {
-        display: none;
-    }
+    // .bottom-handle {
+    //     display: none !important;
+    // }
     background-color: #1F2536;
     .navbar-nav>li>a {
         color: #FFF;
+    }
+    li.nav-item {
+        padding: 10px;
     }
     a.navbar-brand,
     a.navbar-nav {
@@ -60,6 +63,7 @@
     }
 }
 
+// RESPONSIVE MENU BOTTOM 
 @media only screen and (max-width: 600px) {
     .navbar {
         position: fixed;
@@ -70,7 +74,27 @@
         transform: translateY(95%);
         z-index: 100;
         transition: 1s ease-in;
-    } // full screen mobile pop up nav
+    }
+    .bottom-handle {
+        display: inline !important;
+        height: 20px;
+        background: #1F2536;
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        transform: translateY(-35px);
+        // margin: 0 auto;
+        margin-left: 40% !important;
+        padding: 5px;
+    }
+    .line {
+        height: 4px;
+        width: 20px;
+        border-radius: 5px;
+        background: white;
+        margin: 3px auto;
+    }
+    // full screen mobile pop up nav
     .open {
         width: 100%;
         top: 0;
@@ -117,6 +141,11 @@
             top: 50px;
             left: 20px;
             position: fixed;
+            flex-direction: column;
+            margin-left: 0px !important;
+        }
+        .navbar li.nav-item {
+            padding: 0;
         }
         span.circle {
             display: inline-block;
@@ -141,23 +170,5 @@
         .bottom-handle {
             display: none !important;
         }
-    }
-    .bottom-handle {
-        display: inline !important;
-        height: 20px;
-        background: #1F2536;
-        width: 100px;
-        height: 100px;
-        border-radius: 50px;
-        transform: translateY(-35px);
-        margin: 0 auto;
-        padding: 5px;
-    }
-    .line {
-        height: 4px;
-        width: 20px;
-        border-radius: 5px;
-        background: white;
-        margin: 3px auto;
     }
 }
