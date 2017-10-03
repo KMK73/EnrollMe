@@ -1,4 +1,4 @@
-$break-small: 420px;
+$break-small: 600px;
 .top-bar {
   border: 1px solid #CDDBE5;
   background-color: #FFFFFF;
@@ -202,6 +202,17 @@ table {
 
 // RESPONSIVE ON MOBILE 
 @media screen and (max-width: $break-small) {
+  .top-bar {
+    md-select {
+      display: none;
+    }
+    .border-right {
+      border-right: none;
+    }
+    .grade-dropdown {
+      display: none;
+    }
+  }
   button.btn.pull-right.blur-btn {
     width: 100% !important;
     margin-bottom: 10px;
@@ -214,17 +225,7 @@ table {
   .input-group {
     padding: 10px 0;
   }
-  .top-bar {
-    md-select {
-      display: none;
-    }
-    .border-right {
-      border-right: none;
-    }
-    .grade-dropdown {
-      display: none;
-    }
-  }
+
   .modal {
     .blur-btn-blue {
       margin: 10px 0;
