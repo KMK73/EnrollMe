@@ -16,6 +16,8 @@ import { AddStudentComponent } from './components/add-student/add-student.compon
 import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MdSelectModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
+
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'user', component: ProfileComponent },

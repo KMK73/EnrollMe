@@ -1,12 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.css";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 // @import '~https://fonts.googleapis.com/icon?family=Material+Icons'; // import for using material icons
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 // import for using the default material theme indigo-pink
-
-$GRAY : #1F2536;
+$GRAY: #1F2536;
 $fontFamily: "Open Sans";
 $backgroundDash: #F1F6FA;
 body {
@@ -34,6 +34,50 @@ app-home {
   float: none;
 }
 
+// BUTTON STYLES 
+.blur-btn {
+  border-radius: 3px;
+  background: linear-gradient(90deg, #E81348 0%, #FF370F 100%);
+  box-shadow: 0 3px 6px 0 rgba(194, 16, 57, 0.42);
+  color: #FFFFFF;
+  font-family: "Open Sans";
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 13px;
+  text-align: center;
+  min-width: 135px;
+  padding: 12px;
+}
+
+.blur-btn-blue {
+  border-radius: 3px;
+  background: linear-gradient(270deg, #41B9FA 0%, #2395E5 100%);
+  box-shadow: 0 3px 6px 0 rgba(36,150,229,0.46);
+  color: #FFFFFF;
+  font-family: "Open Sans";
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 13px;
+  text-align: center;
+  padding: 12px;
+}
+
+.btn-close {
+  border: 1px solid #979797;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #93949A 0%, #929398 100%);
+  box-shadow: 0 3px 5px 0 rgba(147, 148, 155, 0.39);
+  color: #FFFFFF;
+  font-family: "Open Sans";
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 13px;
+  text-align: center;
+  min-width: 135px;
+  padding: 12px;
+}
+
+// CARD STYLES 
 md-card {
   max-width: 94%;
   margin: 2em auto;
@@ -53,6 +97,7 @@ md-toolbar-row {
   border-radius: 3px;
   background: #FFFFFF url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2211%22%20height%3D%2211%22%20viewBox%3D%220%200%2011%2011%22%3E%3Cpath%20d%3D%22M4.33%208.5L0%201L8.66%201z%22%20fill%3D%22%2300AEA9%22%2F%3E%3C%2Fsvg%3E') right 13px center no-repeat;
 }
+
 .selectWrapper select {
   padding: 12px 30px 12px 20px;
   font-size: 14px;
