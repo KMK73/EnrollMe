@@ -146,11 +146,65 @@ table {
   }
 }
 
+
+/* MODAL SYLES */
+
+.modal {
+  label {
+    color: #474C4F;
+    font-family: "Open Sans";
+    font-size: 14px;
+    line-height: 19px;
+  }
+  .blur-btn-blue {
+    min-height: 42px;
+    width: 100%;
+  }
+  .section-hr {
+    width: 100%;
+    height: 20px;
+    border-bottom: 1px solid #D6D6D6;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    span {
+      font-size: 12px;
+      background-color: white;
+      padding: 10px 10px;
+    }
+  } //table rows
+  .class-rows {
+    p {
+      color: #6A7075;
+      font-size: 14px;
+      letter-spacing: 1px;
+      line-height: 19px;
+      text-align: center;
+      margin-bottom: 2px;
+    }
+    .desciptor {
+      color: #6A7075;
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 14px;
+      text-align: center;
+    }
+    .card {
+      padding: 10px;
+      margin: 10px 0;
+      .delete {
+        // margin-right: 6px; 
+        color: #AFBAC2;
+      }
+    }
+  }
+}
+
 // RESPONSIVE ON MOBILE 
 @media screen and (max-width: $break-small) {
   button.btn.pull-right.blur-btn {
     width: 100% !important;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
   }
   select.sort {
     width: 100%;
@@ -159,5 +213,34 @@ table {
   }
   .input-group {
     padding: 10px 0;
+  }
+  .top-bar {
+    md-select {
+      display: none;
+    }
+    .border-right {
+      border-right: none;
+    }
+    .grade-dropdown {
+      display: none;
+    }
+  }
+  .modal {
+    .blur-btn-blue {
+      margin: 10px 0;
+    }
+    label {
+      margin-top: 5px;
+    }
+  }
+  .class-rows {
+    p {
+      text-align: left !important;
+      padding-left: 10px;
+      margin-top: 8px;
+    }
+    .selectWrapper {
+      margin: 4px 0;
+    }
   }
 }

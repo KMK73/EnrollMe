@@ -115,3 +115,11 @@ md-toolbar-row {
   text-indent: 0.01px;
   text-overflow: ellipsis;
 }
+
+
+// RESPONSIVE MODAL 
+@media (min-width: 576px){
+  .modal-dialog {
+    max-width: 80%;
+  }
+}

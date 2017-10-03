@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+declare var jQuery: any;
+declare var $: any;
 
 @Component({
   selector: 'app-profile',
@@ -9,6 +11,9 @@ export class ProfileComponent implements OnInit {
   marked: false;
   theCheckbox: false;
   selected = 0;
+
+  @ViewChild('myModal') myModal: ElementRef;
+  
   constructor() { }
 
   ngOnInit() {
@@ -22,6 +27,12 @@ export class ProfileComponent implements OnInit {
       this.selected--;
     }
     console.log(this.selected);
+  }
+
+  showStudentModal() {
+    console.log('modal click');
+     // open modal using jQuery
+     jQuery(this.myModal.nativeElement).modal('show');
   }
 
 }

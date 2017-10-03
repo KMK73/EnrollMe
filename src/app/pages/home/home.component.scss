@@ -171,6 +171,9 @@ $break-small: 600px;
     .border-right {
       border-right: none;
     }
+    .grade-dropdown {
+      display: none;
+    }
   }
   .input-group-addon {
     margin-left: 60%;
@@ -193,9 +196,7 @@ $break-small: 600px;
     margin: 10px 0;
     padding: 10px 0;
   }
-  .grade-dropdown {
-    display: none;
-  }
+
   .modal {
     .blur-btn-blue { 
       margin: 10px 0;
@@ -216,10 +217,6 @@ $break-small: 600px;
   }
 }
 
-@media (min-width: 576px){
-  .modal-dialog {
-    max-width: 80%;
-  }
-}
+
 
 
