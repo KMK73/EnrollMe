@@ -17,7 +17,7 @@ app.listen(process.env.PORT || 8080);
 // PathLocationStrategy 
 // angular to handle routing not server
 app.get('*', (req, res)=> {
-    res.sendfile(path.join(__dirname, 'dist/index.html')); 
+    res.sendfile(path.join(__dirname, './dist/index.html')); 
 });
 
 console.log('console listening');
