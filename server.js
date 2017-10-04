@@ -1,17 +1,15 @@
 const express = require('express'); 
 // const http = require('http'); 
 const path = require('path'); 
-let server = require('http').Server(app);
-
-// const api = require('./server/routes/api'); 
 
 const app = express(); 
+let server = require('http').Server(app);
 
 app.use(express.static(__dirname, '/dist')); 
 
 var port = process.env.PORT || 8000
 
-app.listen(process.env.PORT || 8080); 
+// app.listen(process.env.PORT || 8080); 
 server.listen(port, function() {
     console.log("App is running on port " + port);
 });
