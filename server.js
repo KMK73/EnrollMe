@@ -5,7 +5,7 @@ const path = require('path');
 const app = express(); 
 //let server = require('http').Server(app);
 
-app.use(express.static(__dirname, '/dist')); 
+app.use(express.static(__dirname + '/dist')); 
 
 var port = process.env.PORT || 8000
 
